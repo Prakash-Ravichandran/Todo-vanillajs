@@ -9,5 +9,17 @@ window.onload = function () {
     e.preventDefault();
     console.log(e);
     console.log("Button is Clicked");
+
+    formValidation();
   });
+};
+
+let formValidation = () => {
+  if (input.value === "") {
+    msg.innerHTML = "Post cannot be blank";
+    console.log("failure");
+  } else {
+    console.log("success");
+    msg.innerHTML = "Success";
+  }
 };
