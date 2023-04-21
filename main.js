@@ -45,3 +45,15 @@ let createPost = () => {
   `;
   input.value = "";
 };
+
+//deletePost
+let deletePost = (e) => {
+  //e.parentElement => span
+  //e.parentElement.parentElement => div
+  e.parentElement.parentElement.remove();
+};
+// editPost
+let editPost = (e) => {
+  input.value = e.parentElement.previousElementSibling.innerHTML;
+  e.parentElement.parentElement.remove();
+};
