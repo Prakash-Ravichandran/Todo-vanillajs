@@ -12,12 +12,14 @@ window.onload = function () {
     formValidation();
   });
 };
-let data = {};
 
+//data object to store textarea value as data.text=value
+let data = {};
 //accept data
 let acceptData = () => {
   data["text"] = input.value;
   console.log("data=" + data.text);
+  createPost();
 };
 
 let formValidation = () => {
@@ -29,4 +31,17 @@ let formValidation = () => {
     msg.innerHTML = "";
     acceptData();
   }
+};
+
+//createPost
+let createPost = () => {
+  posts.innerHTML += `
+  <div>
+  <p>${data.text}</p>
+  <span class="options">
+   <i onClick="editPost(this)" class="fas fa-edit"></i>
+   <i onClick="deletePost(this)" class="fas fa-trash-alt"></i>
+  </span>
+  `;
+  input.value = "";
 };
