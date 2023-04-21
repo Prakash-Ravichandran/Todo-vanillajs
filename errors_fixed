@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/26107125/cannot-read-property-addeventlistener-of-null
+
+- fixed using window.onload => enclosed all codes in one function
