@@ -3,7 +3,6 @@ window.onload = function () {
   let input = document.getElementById("input");
   let msg = document.getElementById("msg");
   let posts = document.getElementById("posts");
-
   /* submit event listener */
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -13,6 +12,13 @@ window.onload = function () {
     formValidation();
   });
 };
+let data = {};
+
+//accept data
+let acceptData = () => {
+  data["text"] = input.value;
+  console.log("data=" + data.text);
+};
 
 let formValidation = () => {
   if (input.value === "") {
@@ -20,6 +26,7 @@ let formValidation = () => {
     console.log("failure");
   } else {
     console.log("success");
-    msg.innerHTML = "Success";
+    msg.innerHTML = "";
+    acceptData();
   }
 };
